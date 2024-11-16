@@ -25,7 +25,18 @@
       "Machine Learning",
       "Other"
    ],
-   "keywords": [],
+   "keywords": [
+      "javascript",
+      "react.js",
+      "node.js",
+      "express.js",
+      "mongodb",
+      "mongoose",
+      "educhamp",
+      "quiz",
+      "online-quiz",
+      "adaptive-quiz"
+   ],
    "scripts": {
       "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\""
    },
