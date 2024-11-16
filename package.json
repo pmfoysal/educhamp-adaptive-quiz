@@ -1,47 +1,49 @@
 {
-   "name": "educhamp-adaptive-quiz",
-   "private": true,
-   "version": "1.0.0",
-   "license": "ISC",
-   "readme": "README.md",
-   "markdown": "github",
-   "publisher": "@pmfoysal",
-   "description": "Adaptive Online Quiz Practice Test Platform with Enhanced Testing!",
-   "author": {
-      "name": "Foysal Ahmmed",
-      "email": "pmfoysal@gmail.com",
-      "url": "https://github.com/pmfoysal"
-   },
-   "engineStrict": true,
-   "engines": {
-      "npm": "^10.8.2",
-      "node": "^20.18.0"
-   },
-   "categories": [
-      "Programming Languages",
-      "Data Science",
-      "Education",
-      "Language Packs",
-      "Machine Learning",
-      "Other"
-   ],
-   "keywords": [
-      "javascript",
-      "react.js",
-      "node.js",
-      "express.js",
-      "mongodb",
-      "mongoose",
-      "educhamp",
-      "quiz",
-      "online-quiz",
-      "adaptive-quiz"
-   ],
-   "scripts": {
-      "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\""
-   },
-   "dependencies": {
-      "concurrently": "^9.1.0",
-      "nodemon": "^3.1.7"
-   }
+	"name": "educhamp-adaptive-quiz",
+	"private": true,
+	"version": "1.0.0",
+	"license": "ISC",
+	"readme": "README.md",
+	"markdown": "github",
+	"publisher": "@pmfoysal",
+	"description": "Adaptive Online Quiz Practice Test Platform with Enhanced Testing!",
+	"author": {
+		"name": "Foysal Ahmmed",
+		"email": "pmfoysal@gmail.com",
+		"url": "https://github.com/pmfoysal"
+	},
+	"engineStrict": true,
+	"engines": {
+		"npm": "^10.8.2",
+		"node": "^20.18.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Data Science",
+		"Education",
+		"Language Packs",
+		"Machine Learning",
+		"Other"
+	],
+	"keywords": [
+		"javascript",
+		"react.js",
+		"node.js",
+		"express.js",
+		"mongodb",
+		"mongoose",
+		"educhamp",
+		"quiz",
+		"online-quiz",
+		"adaptive-quiz"
+	],
+	"scripts": {
+		"format": "prettier --write ./**/*.{js,jsx,ts,tsx,json,css,scss}",
+		"start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+	},
+	"dependencies": {
+		"concurrently": "^9.1.0",
+		"nodemon": "^3.1.7"
+	}
 }
+
