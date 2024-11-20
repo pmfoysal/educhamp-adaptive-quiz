@@ -1,23 +1,26 @@
-import { Suspense } from 'react';
-import Auth from './layouts/auth';
-import Signin from './pages/signin';
-import Signup from './pages/signup';
-import Quizzes from './pages/quizzes';
-import Dashboard from './layouts/dashboard';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+const SigninPage = lazy(() => import('./pages/signinPage'));
+const SignupPage = lazy(() => import('./pages/signupPage'));
+const AuthLayout = lazy(() => import('./layouts/authLayout'));
+const QuizzesPage = lazy(() => import('./pages/quizzesPage'));
+const NotFoundPage = lazy(() => import('./pages/notFoundPage'));
+const DashboardLayout = lazy(() => import('./layouts/dashboardLayout'));
+const PageLoader = lazy(() => import('./components/loaders/pageLoader'));
 
 export default function App() {
 	return (
 		<Suspense fallback={<PageLoader />}>
 			<Routes>
-				<Route path='/dashboard' element={<Dashboard />}>
-					<Route path='quizzes' element={<Quizzes />} />
+				<Route path='/dashboard' element={<DashboardLayout />}>
+					<Route path='quizzes' element={<QuizzesPage />} />
 				</Route>
-				<Route path='/auth' element={<Auth />}>
-					<Route path='signin' element={<Signin />} />
-					<Route path='signup' element={<Signup />} />
+				<Route path='/auth' element={<AuthLayout />}>
+					<Route path='signin' element={<SigninPage />} />
+					<Route path='signup' element={<SignupPage />} />
 				</Route>
-				<Route path='*' element={<NotFound />} />
+				<Route path='*' element={<NotFoundPage />} />
 			</Routes>
 		</Suspense>
 	);
