@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
+import Auth from './layouts/auth';
 import Signin from './pages/signin';
 import Signup from './pages/signup';
+import Quizzes from './pages/quizzes';
 import Dashboard from './layouts/dashboard';
 import { Routes, Route } from 'react-router-dom';
 
