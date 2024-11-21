@@ -15,6 +15,7 @@ export default function SignupPage() {
 		<form className={styles.form} onSubmit={handleSubmit}>
 			<h1>Create an account!</h1>
 			<p>Please provide your information as requested</p>
+			<Input name='name' holder='Full Name' type='text' />
 			<Input name='email' holder='Email ID' type='email' />
 			<Input name='password' holder='Password' type='password' />
 			<Button color='prime' type='submit'>
