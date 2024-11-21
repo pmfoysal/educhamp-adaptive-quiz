@@ -1,0 +1,15 @@
+.form {
+	@apply p-4 grid gap-3 w-full;
+
+	h1 {
+		@apply text-center font-semibold text-tColor-950 text-2xl pt-2;
+	}
+
+	p {
+		@apply text-center text-tColor-900 pb-4;
+	}
+}
+
+.button {
+	@apply h-11 w-full bg-prime-500 text-second rounded-lg flex items-center justify-center font-semibold transition-ease hover:opacity-85;
+}

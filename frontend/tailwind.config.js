@@ -9,6 +9,7 @@ export default {
 			colors: {
 				prime: colors.red,
 				second: colors.white,
+				tColor: colors.slate,
 			},
 		},
 	},

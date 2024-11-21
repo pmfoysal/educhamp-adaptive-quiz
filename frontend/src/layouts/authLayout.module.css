@@ -3,7 +3,7 @@
 }
 
 .main {
-	@apply w-[450px] rounded-2xl bg-second shadow-md h-[200px] overflow-hidden;
+	@apply w-[425px] rounded-2xl bg-second shadow-md overflow-hidden;
 }
 
 .header {
@@ -14,6 +14,6 @@
 	}
 
 	[class~='active'] {
-		@apply bg-prime-500 text-second;
+		@apply bg-prime-500 text-second font-semibold;
 	}
 }

@@ -1,0 +1,3 @@
+.input {
+	@apply outline-none border border-slate-200 rounded-lg h-11 w-full px-4 placeholder:opacity-50 placeholder:text-inherit text-tColor-900 transition-ease focus:outline-prime-400 outline-1;
+}

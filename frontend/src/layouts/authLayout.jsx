@@ -1,6 +1,6 @@
 import styles from './authLayout.module.css';
 import { useAuthContext } from '@/contexts/authContext';
-import { Link, Navigate, NavLink, Outlet } from 'react-router-dom';
+import { Navigate, NavLink, Outlet } from 'react-router-dom';
 
 export default function AuthLayout() {
 	const { user } = useAuthContext();
