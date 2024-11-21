@@ -1,3 +1,9 @@
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuthContext } from '../contexts/authContext';
+
 export default function AuthLayout() {
-	return <div>AuthLayout</div>;
+	const { user } = useAuthContext();
+
+	if (!user) return <Outlet />;
+	return <Navigate to='/dashboard/quizzes' />;
 }
