@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import styles from './signinPage.module.css';
+import Form from '../components/base/form';
 import Input from '../components/base/input';
 import Button from '../components/base/button';
 import Divider from '../components/base/divider';
@@ -12,7 +12,7 @@ export default function SigninPage() {
 	function handleGoogle() {}
 
 	return (
-		<form className={styles.form} onSubmit={handleSubmit}>
+		<Form onSubmit={handleSubmit}>
 			<h1>Welcome Back!</h1>
 			<p>Please provide your credentials for Signin</p>
 			<Input name='email' holder='Email ID' type='email' />
@@ -25,6 +25,6 @@ export default function SigninPage() {
 				<Icon icon='flat-color-icons:google' />
 				Signin with Google
 			</Button>
-		</form>
+		</Form>
 	);
 }

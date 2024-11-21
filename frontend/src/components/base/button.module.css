@@ -1,5 +1,5 @@
 .button {
-	@apply h-11 w-full rounded-lg flex items-center gap-2 leading-none justify-center font-semibold transition-ease hover:opacity-85;
+	@apply h-11 w-full rounded-lg flex items-center gap-2 leading-none justify-center font-semibold transition-ease hover:opacity-85 active:scale-95;
 
 	svg {
 		@apply h-5 w-auto;

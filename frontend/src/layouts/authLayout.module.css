@@ -1,9 +1,9 @@
 .page {
-	@apply w-full h-screen flex items-center justify-center bg-prime-50;
+	@apply w-full h-screen flex items-center justify-center bg-prime-50 p-3;
 }
 
 .main {
-	@apply w-[425px] rounded-2xl bg-second shadow-md overflow-hidden;
+	@apply w-full sm:w-[425px] rounded-2xl bg-second shadow-md overflow-hidden;
 }
 
 .header {
