@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 const SigninPage = lazy(() => import('./pages/signinPage'));
 const SignupPage = lazy(() => import('./pages/signupPage'));
 const QuizzesPage = lazy(() => import('./pages/quizzesPage'));
+const ResultsPage = lazy(() => import('./pages/resultsPage'));
 const HomeLayout = lazy(() => import('./layouts/homeLayout'));
 const AuthLayout = lazy(() => import('./layouts/authLayout'));
 const NotFoundPage = lazy(() => import('./pages/notFoundPage'));
@@ -16,6 +17,7 @@ export default function App() {
 				<Route path='/' element={<HomeLayout />}>
 					<Route index element={<QuizzesPage />} />
 					<Route path='quizzes' element={<QuizzesPage />} />
+					<Route path='results' element={<ResultsPage />} />
 				</Route>
 				<Route path='/' element={<AuthLayout />}>
 					<Route path='signin' element={<SigninPage />} />
