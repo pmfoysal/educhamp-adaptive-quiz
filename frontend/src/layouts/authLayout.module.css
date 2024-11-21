@@ -1,0 +1,19 @@
+.page {
+	@apply w-full h-screen flex items-center justify-center bg-prime-50;
+}
+
+.main {
+	@apply w-[450px] rounded-2xl bg-second shadow-md h-[200px] overflow-hidden;
+}
+
+.header {
+	@apply grid grid-cols-2 gap-[2px];
+
+	a {
+		@apply h-11 w-full flex items-center justify-center bg-prime-100 transition-ease;
+	}
+
+	[class~='active'] {
+		@apply bg-prime-500 text-second;
+	}
+}
