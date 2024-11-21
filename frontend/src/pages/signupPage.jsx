@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react';
 import styles from './signinPage.module.css';
 import Input from '../components/base/input';
 import Button from '../components/base/button';
+import Divider from '../components/base/divider';
 
 export default function SignupPage() {
 	function handleSubmit(event) {
@@ -19,11 +20,7 @@ export default function SignupPage() {
 			<Button color='prime' type='submit'>
 				Signup
 			</Button>
-			<div>
-				<span></span>
-				OR
-				<span></span>
-			</div>
+			<Divider />
 			<Button color='second' onClick={handleGoogle}>
 				<Icon icon='flat-color-icons:google' />
 				Signup with Google
