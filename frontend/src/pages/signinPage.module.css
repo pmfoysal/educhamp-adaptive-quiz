@@ -9,7 +9,3 @@
 		@apply text-center text-tColor-900 pb-4;
 	}
 }
-
-.button {
-	@apply h-11 w-full bg-prime-500 text-second rounded-lg flex items-center justify-center font-semibold transition-ease hover:opacity-85;
-}

@@ -1,0 +1,15 @@
+.button {
+	@apply h-11 w-full rounded-lg flex items-center gap-2 leading-none justify-center font-semibold transition-ease hover:opacity-85;
+
+	svg {
+		@apply h-5 w-auto;
+	}
+}
+
+.prime {
+	@apply bg-prime-500 text-second;
+}
+
+.second {
+	@apply bg-prime-100 text-tColor-900;
+}
