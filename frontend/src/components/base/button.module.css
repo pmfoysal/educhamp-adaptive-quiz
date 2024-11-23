@@ -1,8 +1,12 @@
 .button {
-	@apply h-11 w-full rounded-lg flex items-center gap-2 leading-none justify-center font-semibold transition-ease hover:opacity-85 active:scale-95;
+	@apply h-11 w-full rounded-lg flex items-center gap-2 leading-none justify-center font-semibold transition-ease hover:opacity-85 active:scale-95 select-none;
 
 	svg {
 		@apply h-5 w-auto;
+	}
+
+	&:disabled {
+		@apply opacity-50 pointer-events-none;
 	}
 }
 
@@ -12,4 +16,12 @@
 
 .second {
 	@apply bg-prime-100 text-tColor-900;
+}
+
+.neutral {
+	@apply bg-black text-second;
+}
+
+.blue {
+	@apply bg-blue-500 text-second;
 }

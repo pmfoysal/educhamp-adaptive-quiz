@@ -1,0 +1,15 @@
+.welcome {
+	@apply h-full w-full flex flex-col items-center justify-center gap-4;
+
+	h1 {
+		@apply text-xl text-tColor-900 font-semibold text-center leading-tight;
+	}
+
+	p {
+		@apply text-tColor-800 leading-normal text-center max-w-xl;
+	}
+
+	button {
+		@apply max-w-40 mt-6;
+	}
+}

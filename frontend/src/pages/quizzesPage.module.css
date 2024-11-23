@@ -1,3 +1,11 @@
 .page {
 	@apply bg-prime-50 rounded-2xl p-4;
 }
+
+.note {
+	@apply py-8 px-2 text-tColor-700;
+}
+
+.buttons {
+	@apply grid grid-cols-2 gap-4;
+}
