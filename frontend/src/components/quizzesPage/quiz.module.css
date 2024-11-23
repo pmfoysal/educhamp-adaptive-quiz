@@ -1,0 +1,39 @@
+.quiz {
+	@apply border-2 border-second rounded-xl overflow-hidden;
+}
+
+.title {
+	@apply bg-second text-tColor-900 px-4 py-2 text-lg font-semibold grid grid-cols-[1fr_auto_auto] gap-2;
+}
+
+.tag {
+	@apply text-xs px-2 py-1 rounded-md leading-none h-full flex items-center justify-center;
+}
+
+.topic {
+	@apply bg-blue-50 text-blue-500;
+}
+
+.easy {
+	@apply bg-green-50 text-green-500;
+}
+
+.medium {
+	@apply bg-yellow-50 text-yellow-500;
+}
+
+.hard {
+	@apply bg-red-50 text-red-500;
+}
+
+.options {
+	@apply p-4 flex flex-col gap-2;
+}
+
+.option {
+	@apply flex items-center gap-2 text-tColor-800;
+
+	input {
+		accent-color: theme(colors.prime.500);
+	}
+}
