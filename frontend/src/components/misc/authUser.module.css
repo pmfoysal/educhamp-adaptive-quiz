@@ -1,0 +1,52 @@
+.container {
+	@apply flex items-center gap-4 relative;
+}
+
+.title {
+	@apply text-tColor-900 text-xl;
+
+	span {
+		@apply font-semibold;
+	}
+}
+
+.user {
+	@apply h-9 w-9 rounded-full overflow-hidden transition-ease hover:opacity-85 active:scale-95 cursor-pointer;
+}
+
+.isOpen {
+	@apply !flex;
+}
+
+.window {
+	@apply hidden absolute top-full right-0 z-50 bg-second pm-shadow rounded-xl overflow-hidden p-4 mt-3 w-[250px] flex-col items-center;
+}
+
+.avatar {
+	@apply h-[120px] w-[120px] rounded-full overflow-hidden;
+}
+
+.name {
+	@apply pt-2 text-xl text-tColor-900 font-semibold;
+}
+
+.buttons {
+	@apply w-full flex flex-col gap-1 pt-6;
+
+	a,
+	.active {
+		@apply h-10 w-full flex items-center gap-2 bg-prime-50 rounded-lg px-4 text-tColor-800 transition-ease hover:opacity-85;
+
+		svg {
+			@apply h-[18px] w-auto;
+		}
+	}
+
+	[class~='active'] {
+		@apply bg-prime-500 text-second font-semibold;
+	}
+}
+
+.active {
+	@apply !bg-black !text-second;
+}

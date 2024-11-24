@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import styles from './homeLayout.module.css';
+import AuthUser from '../components/misc/authUser';
 import { useAuthContext } from '../contexts/authContext';
 import { Navigate, NavLink, Outlet } from 'react-router-dom';
 
@@ -13,8 +14,11 @@ export default function HomeLayout() {
 			<article className={styles.main}>
 				<header className={styles.header}>
 					<h1>
-						Adapt<span>Quizz</span>{' '}
+						Adapt<span>Quizz</span>
 					</h1>
+					<div className={styles.user}>
+						<AuthUser user={user} />
+					</div>
 				</header>
 				<div className={styles.body}>
 					<aside className={styles.sidebar}>

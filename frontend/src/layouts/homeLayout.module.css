@@ -18,6 +18,10 @@
 	}
 }
 
+.user {
+	@apply w-full h-full flex items-center justify-end px-4;
+}
+
 .body {
 	@apply grid grid-cols-[250px_1fr];
 }
@@ -30,7 +34,7 @@
 	}
 
 	a {
-		@apply h-10 w-full flex items-center gap-2 rounded-lg bg-second text-tColor-900 transition-ease px-4 leading-none;
+		@apply h-10 w-full flex items-center gap-2 rounded-lg bg-second text-tColor-900 transition-ease px-4 leading-none hover:opacity-85;
 
 		svg {
 			@apply h-[18px] w-auto;

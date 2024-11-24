@@ -31,7 +31,7 @@
 }
 
 .option {
-	@apply flex items-center gap-2 text-tColor-800;
+	@apply flex items-center gap-2 text-tColor-800 cursor-pointer;
 
 	input {
 		accent-color: theme(colors.prime.500);
