@@ -15,7 +15,7 @@
 }
 
 .paras {
-	@apply text-tColor-800 leading-normal flex flex-col gap-3 pb-8;
+	@apply text-tColor-800 leading-normal flex flex-col gap-3 pb-10;
 
 	strong {
 		@apply font-semibold;
