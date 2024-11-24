@@ -3,7 +3,7 @@
 }
 
 .main {
-	@apply bg-second rounded-3xl h-[800px] pm-shadow w-[1280px] overflow-hidden grid grid-rows-[80px_1fr];
+	@apply bg-second rounded-3xl h-[85vh] pm-shadow w-[1280px] overflow-hidden grid grid-rows-[9vh_76vh];
 }
 
 .header {
@@ -43,5 +43,5 @@
 }
 
 .content {
-	@apply p-4 grid pt-0;
+	@apply p-4 grid pt-0 h-full overflow-hidden;
 }

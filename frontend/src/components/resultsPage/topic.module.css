@@ -1,0 +1,19 @@
+.title {
+	@apply text-tColor-900 text-xl;
+
+	span {
+		@apply font-semibold;
+	}
+}
+
+.score {
+	@apply text-tColor-800 mt-1;
+
+	span {
+		@apply font-semibold;
+	}
+}
+
+.list {
+	@apply pt-4 flex flex-col gap-3;
+}

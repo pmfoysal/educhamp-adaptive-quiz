@@ -11,3 +11,19 @@
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
 	}
 }
+
+*::selection {
+	@apply bg-prime-500 text-second;
+}
+
+*::-webkit-scrollbar {
+	@apply w-[6px];
+}
+
+*::-webkit-scrollbar-thumb {
+	@apply bg-prime-500 rounded-2xl;
+}
+
+*::-webkit-scrollbar-track {
+	@apply bg-prime-100;
+}

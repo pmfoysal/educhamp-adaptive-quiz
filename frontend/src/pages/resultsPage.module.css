@@ -1,0 +1,15 @@
+.page {
+	@apply bg-prime-50 rounded-2xl p-4 grid w-full h-full overflow-hidden;
+}
+
+.list {
+	@apply w-full h-full overflow-y-auto grid gap-4 pr-4;
+}
+
+.title {
+	@apply text-tColor-900 text-2xl text-center pb-4;
+
+	span {
+		@apply font-semibold;
+	}
+}
