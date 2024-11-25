@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema(
 	{
-		gId: { type: String, default: '' },
 		name: { type: String, required: true },
+		googleId: { type: String, default: '' },
 		password: { type: String, required: true },
 		email: { type: String, required: true, unique: true },
 	},
