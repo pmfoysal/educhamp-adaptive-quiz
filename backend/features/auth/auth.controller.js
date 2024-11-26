@@ -28,7 +28,7 @@ module.exports.signup = async (req, res) => {
 
 module.exports.googleCallback = async (req, res) => {
 	try {
-		const user = req.user;
+		const user = req.user._doc;
 		const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '3d' });
 		delete user.password;
 		res.status(200).send({ ...user, token });

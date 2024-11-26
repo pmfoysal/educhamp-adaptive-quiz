@@ -20,9 +20,9 @@ module.exports.getMany = async () => {
 				level: {
 					$switch: {
 						branches: [
-							{ case: { $eq: ['$difficulty', 'easy'], then: 1 } },
-							{ case: { $eq: ['$difficulty', 'medium'], then: 2 } },
-							{ case: { $eq: ['$difficulty', 'hard'], then: 3 } },
+							{ case: { $eq: ['$difficulty', 'easy'] }, then: 1 },
+							{ case: { $eq: ['$difficulty', 'medium'] }, then: 2 },
+							{ case: { $eq: ['$difficulty', 'hard'] }, then: 3 },
 						],
 						default: 4,
 					},

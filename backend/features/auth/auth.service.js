@@ -12,7 +12,8 @@ module.exports.addGoogle = async data => {
 		user.googleId = id;
 		await user.save();
 	} else {
-		user = await User.create({ email, googleId: id, name: displayName, password: '' });
+		const temp = await User.create({ email, googleId: id, name: displayName });
+		user = await temp.save();
 	}
 
 	return user;

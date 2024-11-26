@@ -1,0 +1,162 @@
+[
+	{
+		"title": "Which of the following shapes has four sides of equal length and four right angles, making it a perfect example of a square?",
+		"topic": "Geometry",
+		"options": ["Rectangle", "Square", "Circle", "Triangle"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "What is the solution when you subtract 10 from a number, and the result equals 20?",
+		"topic": "Algebra",
+		"options": ["5", "6", "4", "3"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "What force is responsible for the attraction between the Earth and an object that falls from a height?",
+		"topic": "Physics",
+		"options": ["Friction", "Gravity", "Electromagnetic", "Tension"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "If the government increases the money supply in an economy, it typically leads to an increase in what?",
+		"topic": "Economics",
+		"options": ["Unemployment", "Inflation", "Tax rates", "Interest rates"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "What is the primary function of red blood cells in the human body?",
+		"topic": "Biology",
+		"options": ["To digest food", "To carry oxygen", "To fight infections", "To produce hormones"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "Which of the following instruments is a string instrument commonly used in orchestras and has four strings?",
+		"topic": "Music",
+		"options": ["Flute", "Violin", "Trumpet", "Drum"],
+		"difficulty": "easy",
+		"correctOption": 2
+	},
+	{
+		"title": "In a right triangle, if one side is 6 units and the other is 8 units, what is the length of the longest side?",
+		"topic": "Geometry",
+		"options": ["10 units", "12 units", "7 units", "9 units"],
+		"difficulty": "medium",
+		"correctOption": 1
+	},
+	{
+		"title": "Which of the following represents the equation of a straight line in a two-dimensional space?",
+		"topic": "Algebra",
+		"options": ["x + y = z", "y = mx + b", "x^2 + y^2 = r^2", "xy = c"],
+		"difficulty": "medium",
+		"correctOption": 2
+	},
+	{
+		"title": "Which of the following is the primary reason why the sky appears blue during the day?",
+		"topic": "Physics",
+		"options": [
+			"Scattering of light",
+			"Reflection of the ocean",
+			"Absorption by the atmosphere",
+			"Refraction of light"
+		],
+		"difficulty": "medium",
+		"correctOption": 1
+	},
+	{
+		"title": "What term is used to describe the total value of goods and services produced within a country's borders over a specific time period?",
+		"topic": "Economics",
+		"options": ["Gross Domestic Product (GDP)", "Net Profit", "National Income", "Inflation Rate"],
+		"difficulty": "medium",
+		"correctOption": 1
+	},
+	{
+		"title": "Which of the following is a major organ in the human body responsible for filtering toxins from the blood and producing bile?",
+		"topic": "Biology",
+		"options": ["Kidney", "Heart", "Liver", "Stomach"],
+		"difficulty": "medium",
+		"correctOption": 3
+	},
+	{
+		"title": "What is the name of the musical notation that represents the sound produced by a single note or pitch for a specific duration?",
+		"topic": "Music",
+		"options": ["Rest", "Clef", "Note", "Scale"],
+		"difficulty": "medium",
+		"correctOption": 3
+	},
+	{
+		"title": "In a circle, what is the name of the longest possible line that passes through the center of the circle, connecting two points on the circumference?",
+		"topic": "Geometry",
+		"options": ["Diameter", "Radius", "Chord", "Secant"],
+		"difficulty": "medium",
+		"correctOption": 1
+	},
+	{
+		"title": "Which of the following describes the general form of a quadratic equation?",
+		"topic": "Algebra",
+		"options": [
+			"A linear equation",
+			"An equation involving squared terms",
+			"An equation involving only constants",
+			"An equation that describes curves"
+		],
+		"difficulty": "hard",
+		"correctOption": 2
+	},
+	{
+		"title": "In quantum mechanics, what is the term used to describe the smallest discrete unit of energy that can be absorbed or emitted by an atom?",
+		"topic": "Physics",
+		"options": ["Photon", "Quanta", "Electron", "Neutron"],
+		"difficulty": "hard",
+		"correctOption": 1
+	},
+	{
+		"title": "According to Keynesian economic theory, what happens to the overall economy when the government cuts spending?",
+		"topic": "Economics",
+		"options": [
+			"The economy grows",
+			"The economy shrinks",
+			"The economy remains the same",
+			"The economy becomes unpredictable"
+		],
+		"difficulty": "hard",
+		"correctOption": 2
+	},
+	{
+		"title": "In the process of cellular respiration, which molecule is produced when glucose is broken down in the presence of oxygen?",
+		"topic": "Biology",
+		"options": ["Oxygen", "Carbon dioxide", "Water", "Nitrogen"],
+		"difficulty": "hard",
+		"correctOption": 2
+	},
+	{
+		"title": "Which of the following musical scales is commonly used in Western classical music and contains seven distinct notes in a specific sequence?",
+		"topic": "Music",
+		"options": ["Chromatic scale", "Major scale", "Minor scale", "Blues scale"],
+		"difficulty": "hard",
+		"correctOption": 2
+	},
+	{
+		"title": "In a three-dimensional rectangular box, what is the formula for calculating its volume?",
+		"topic": "Geometry",
+		"options": [
+			"Volume = length × width × height",
+			"Volume = length × width",
+			"Volume = 4/3 × π × radius³",
+			"Volume = side × side"
+		],
+		"difficulty": "hard",
+		"correctOption": 1
+	},
+	{
+		"title": "What is the term used to describe the phenomenon where light bends as it passes through different mediums with varying refractive indices?",
+		"topic": "Physics",
+		"options": ["Diffraction", "Refraction", "Reflection", "Dispersion"],
+		"difficulty": "hard",
+		"correctOption": 2
+	}
+]

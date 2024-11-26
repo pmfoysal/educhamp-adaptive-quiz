@@ -6,7 +6,7 @@ const schema = new mongoose.Schema(
 		results: [
 			{
 				questionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' },
-				selectedOption: { type: Number, required: true },
+				selectedOption: { type: Number, default: null },
 			},
 		],
 	},

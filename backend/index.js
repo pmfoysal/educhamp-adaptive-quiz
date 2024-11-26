@@ -1,14 +1,14 @@
 require('colors');
-const dotenv = require('dotenv');
+require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
+require('./configs/passport.config');
 const authRoutes = require('./features/auth/auth.route');
 const answerRoutes = require('./features/answers/answer.route');
 const questionRoutes = require('./features/questions/question.route');
 
-dotenv.config();
 const app = express();
-
 app.use(express.json());
 app.use(cors({ origin: '*' }));
 
