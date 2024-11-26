@@ -7,3 +7,5 @@ auth.post('/signup', controllers.signup);
 
 auth.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 auth.get('/google/callback', passport.authenticate('google', { session: false }, controllers.googleCallback));
+
+module.exports = auth;
