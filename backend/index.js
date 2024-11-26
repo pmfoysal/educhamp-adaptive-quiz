@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./features/auth/auth.route');
+const answerRoutes = require('./features/answers/answer.route');
 const questionRoutes = require('./features/questions/question.route');
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/quiz', answerRoutes);
 app.use('/api/quiz', questionRoutes);
 
 mongoose
