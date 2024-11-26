@@ -1,11 +1,11 @@
 const passport = require('passport');
-const auth = require('express').Router();
+const api = require('express').Router();
 const controllers = require('./auth.controller');
 
-auth.post('/signin', controllers.signin);
-auth.post('/signup', controllers.signup);
+api.post('/signin', controllers.signin);
+api.post('/signup', controllers.signup);
 
-auth.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-auth.get('/google/callback', passport.authenticate('google', { session: false }, controllers.googleCallback));
+api.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+api.get('/google/callback', passport.authenticate('google', { session: false }, controllers.googleCallback));
 
-module.exports = auth;
+module.exports = api;

@@ -18,6 +18,15 @@ module.exports.getOne = async (req, res) => {
 	}
 };
 
+module.exports.getReports = async (req, res) => {
+	try {
+		const result = await services.getReports(req.params.id);
+		res.status(200).send(result);
+	} catch (error) {
+		res.status(400).send(error.message);
+	}
+};
+
 module.exports.getOneByUser = async (req, res) => {
 	try {
 		const result = await services.getOneByUser(req.params.id);

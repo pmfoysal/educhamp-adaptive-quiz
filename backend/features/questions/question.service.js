@@ -34,8 +34,8 @@ module.exports.getMany = async () => {
 	]);
 };
 
-module.exports.editOne = async data => {
-	return await Question.updateOne({ _id: data.id }, data);
+module.exports.editOne = async ({ _id, data }) => {
+	return await Question.updateOne({ _id }, data);
 };
 
 module.exports.deleteOne = async _id => {
