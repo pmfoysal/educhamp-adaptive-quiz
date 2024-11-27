@@ -2,6 +2,7 @@ const Answer = require('./answer.model');
 const { ObjectId } = require('mongoose').Types;
 
 module.exports.addOne = async data => {
+	await Answer.deleteOne({ userId: new ObjectId(data.userId) });
 	const answer = await Answer.create(data);
 	return answer.save();
 };

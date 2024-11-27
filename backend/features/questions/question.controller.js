@@ -45,6 +45,15 @@ module.exports.getNextOne = async (req, res) => {
 	}
 };
 
+module.exports.getTotal = async (req, res) => {
+	try {
+		const result = await services.getTotal();
+		res.status(200).send(result);
+	} catch (error) {
+		res.status(400).send(error.message);
+	}
+};
+
 module.exports.editOne = async (req, res) => {
 	try {
 		const result = await services.editOne({ _id: req.params.id, data: req.body });

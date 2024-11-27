@@ -2,6 +2,7 @@ const passport = require('passport');
 const api = require('express').Router();
 const controllers = require('./auth.controller');
 
+api.get('/info', controllers.getInfo);
 api.post('/signin', controllers.signin);
 api.post('/signup', controllers.signup);
 

@@ -80,6 +80,10 @@ module.exports.getNextOne = async data => {
 	return questions.nextOne;
 };
 
+module.exports.getTotal = async () => {
+	return await Question.find({}).countDocuments();
+};
+
 module.exports.editOne = async ({ _id, data }) => {
 	return await Question.updateOne({ _id }, data);
 };

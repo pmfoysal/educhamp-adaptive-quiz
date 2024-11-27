@@ -5,7 +5,7 @@ export function useNextQuestion() {
 	return useMutation({
 		mutationKey: ['nextQuestion'],
 		mutationFn: async data => {
-			const result = await api.post('/quiz/question/next', data);
+			const result = await api.post('/quiz/questions/next', data);
 			return result.data;
 		},
 	});
@@ -15,7 +15,7 @@ export function useTotalQuestion() {
 	return useQuery({
 		queryKey: ['totalQuestion'],
 		queryFn: async () => {
-			const result = await api.get('/quiz/question/total');
+			const result = await api.get('/quiz/questions/total');
 			return result.data;
 		},
 	});
