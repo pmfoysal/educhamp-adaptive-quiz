@@ -6,12 +6,12 @@ import Input from '../components/base/input';
 import Button from '../components/base/button';
 import Divider from '../components/base/divider';
 import { useAuthContext } from '../contexts/authContext';
-import { useSignin, useGoogleSignin } from '../hooks/useAuth';
+import { useSignin, useGoogleAuth } from '../hooks/useAuth';
 
 export default function SigninPage() {
 	const signinApi = useSignin();
 	const { setUser } = useAuthContext();
-	const googleSigninApi = useGoogleSignin();
+	const googleAuthApi = useGoogleAuth();
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -30,7 +30,7 @@ export default function SigninPage() {
 
 	function handleGoogle() {
 		const tId = toast.loading('Signing you in...');
-		googleSigninApi
+		googleAuthApi
 			.mutateAsync()
 			.then(data => {
 				console.log({ data });
@@ -41,7 +41,7 @@ export default function SigninPage() {
 			});
 	}
 
-	const isLoading = signinApi.isPending || googleSigninApi.isPending;
+	const isLoading = signinApi.isPending || googleAuthApi.isPending;
 
 	return (
 		<Form onSubmit={handleSubmit}>

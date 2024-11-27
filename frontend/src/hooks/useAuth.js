@@ -21,7 +21,7 @@ export function useSignup() {
 	});
 }
 
-export function useGoogleSignin() {
+export function useGoogleAuth() {
 	return useMutation({
 		mutationKey: ['googleSignin'],
 		mutationFn: async () => {
