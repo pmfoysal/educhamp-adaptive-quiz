@@ -1,14 +1,28 @@
-import { Fragment, useState } from 'react';
+import toast from 'react-hot-toast';
 import styles from './quizzesPage.module.css';
 import Button from '../components/base/button';
 import Quiz from '../components/quizzesPage/quiz';
+import { Fragment, useEffect, useState } from 'react';
 import Result from '../components/quizzesPage/result';
 import Welcome from '../components/quizzesPage/welcome';
+import { useAuthContext } from '../contexts/authContext';
+import { useQuizContext } from '../contexts/quizContext';
+import PageLoader from '../components/loaders/pageLoader';
+import { useGetAnswer, useSubmitAnswer } from '../hooks/useAnswers';
+import { useNextQuestion, useTotalQuestion } from '../hooks/useQuestions';
 
 export default function QuizzesPage() {
+	const { user } = useAuthContext();
+	const submitApi = useSubmitAnswer();
+	const { quizList, setQuizList } = useQuizContext();
+
+	const totalApi = useTotalQuestion();
+	const nextQuizApi = useNextQuestion();
+	const answerApi = useGetAnswer(user?._id);
+
 	const [currQuiz, setCurrQuiz] = useState(0);
-	const [totalQuiz, setTotalQuiz] = useState(10);
-	const [hasResult, setHasResult] = useState(true);
+	const [totalQuiz, setTotalQuiz] = useState(0);
+	const [hasResult, setHasResult] = useState(false);
 
 	function handleRestart() {
 		setCurrQuiz(0);
@@ -20,10 +34,64 @@ export default function QuizzesPage() {
 	}
 
 	function handleNext() {
-		setCurrQuiz(prev => (prev < totalQuiz ? prev + 1 : prev));
+		if (currQuiz < quizList.length) setCurrQuiz(prev => (prev < totalQuiz ? prev + 1 : prev));
+		else {
+			const currQuestion = quizList.at(-1);
+			nextQuizApi
+				.mutateAsync({
+					currId: currQuestion._id,
+					currOption: currQuestion.selectedOption,
+					answeredIds: quizList.map(item => item._id),
+				})
+				.then(data => {
+					if (data?._id) {
+						setQuizList(prev => [...prev, { ...data, selectedOption: null }]);
+						setCurrQuiz(prev => (prev < totalQuiz ? prev + 1 : prev));
+					}
+				});
+		}
 	}
 
-	function handleSubmit() {}
+	function handleStartQuiz() {
+		nextQuizApi.mutateAsync({ currId: '', currOption: null, answeredIds: [] }).then(data => {
+			if (data?._id) {
+				setQuizList([{ ...data, selectedOption: null }]);
+				setCurrQuiz(1);
+			}
+		});
+	}
+
+	function handleSubmit() {
+		const tId = toast.loading('Submitting your answers...');
+		submitApi
+			.mutateAsync({
+				userId: user._id,
+				results: quizList.map(item => ({
+					questionId: item._id,
+					selectedOption: item.selectedOption,
+				})),
+			})
+			.then(() => {
+				toast.success('Successfuly submitted!', { id: tId });
+				setCurrQuiz(0);
+				answerApi.refetch();
+			})
+			.catch(error => {
+				toast.error(error.message, { id: tId });
+			});
+	}
+
+	useEffect(() => {
+		if (totalApi.data?.count) setTotalQuiz(totalApi.data.count);
+	}, [totalApi.data]);
+
+	useEffect(() => {
+		if (answerApi.data?.results) setHasResult(true);
+	}, [answerApi.data]);
+
+	const isLoading = totalApi.isPending || answerApi.isPending;
+
+	if (isLoading) return <PageLoader />;
 
 	return (
 		<div className={styles.page}>
@@ -32,13 +100,21 @@ export default function QuizzesPage() {
 			) : (
 				<Fragment>
 					{!currQuiz ? (
-						<Welcome onStart={() => setCurrQuiz(1)} />
+						<Welcome onStart={handleStartQuiz} />
 					) : (
 						<div>
-							<Quiz />
-							<p className={styles.note}>You have completed 0 of 20 quizzes!</p>
+							{quizList.length ? (
+								<Quiz count={currQuiz} data={quizList[currQuiz - 1]} setQuizList={setQuizList} />
+							) : null}
+							<p className={styles.note}>
+								You have completed {quizList.filter(item => item.selectedOption !== null).length} of 20 quizzes!
+							</p>
 							<div className={styles.buttons}>
-								<Button color='neutral' disabled={!currQuiz} onClick={handlePrev}>
+								<Button
+									color='neutral'
+									disabled={!currQuiz}
+									onClick={handlePrev}
+									isDisabled={nextQuizApi.isPending}>
 									Prev
 								</Button>
 								{currQuiz === totalQuiz ? (
@@ -46,7 +122,7 @@ export default function QuizzesPage() {
 										Submit
 									</Button>
 								) : (
-									<Button color='prime' onClick={handleNext}>
+									<Button color='prime' onClick={handleNext} isDisabled={nextQuizApi.isPending}>
 										Next
 									</Button>
 								)}

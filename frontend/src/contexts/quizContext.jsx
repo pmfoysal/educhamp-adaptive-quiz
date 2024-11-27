@@ -1,9 +1,10 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const Context = createContext(null);
 
 export default function QuizContext({ children }) {
-	return <Context.Provider value={{}}>{children}</Context.Provider>;
+	const [quizList, setQuizList] = useState([]);
+	return <Context.Provider value={{ quizList, setQuizList }}>{children}</Context.Provider>;
 }
 
 export function useQuizContext() {

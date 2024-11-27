@@ -1,30 +1,41 @@
 import styles from './quiz.module.css';
 
-export default function Quiz() {
+export default function Quiz({ data, count, setQuizList }) {
+	function handleSelect(index) {
+		return event => {
+			if (event.target.checked) {
+				setQuizList(prev =>
+					prev.map(item => {
+						if (item._id !== data._id) return item;
+						return {
+							...item,
+							selectedOption: index + 1,
+						};
+					})
+				);
+			}
+		};
+	}
+
 	return (
 		<div className={styles.quiz}>
 			<h1 className={styles.title}>
-				01. Which of the following best describes the derivative of a function in calculus?
-				<span className={`${styles.tag} ${styles.topic}`}>Calculus</span>{' '}
-				<span className={`${styles.tag} ${styles['easy']}`}>Easy</span>
+				{String(count).padStart(2, '0')}. {data.title}
+				<span className={`${styles.tag} ${styles.topic}`}>{data.topic}</span>{' '}
+				<span className={`${styles.tag} ${styles[data.difficulty]}`}>{data.difficulty}</span>
 			</h1>
 			<fieldset className={styles.options}>
-				<label className={styles.option}>
-					<input type='radio' name='' />
-					The slope of the tangent line to the function at a given point.
-				</label>
-				<label className={styles.option}>
-					<input type='radio' name='' />
-					The total area under the curve of the function.
-				</label>
-				<label className={styles.option}>
-					<input type='radio' name='' />
-					The maximum value of the function.
-				</label>
-				<label className={styles.option}>
-					<input type='radio' name='' />
-					The value of the function at a given point.
-				</label>
+				{data.options.map((item, index) => (
+					<label key={index} className={styles.option}>
+						<input
+							type='radio'
+							name={data._id}
+							onChange={handleSelect(index)}
+							checked={data.selectedOption === index + 1}
+						/>
+						{item}
+					</label>
+				))}
 			</fieldset>
 		</div>
 	);

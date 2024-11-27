@@ -37,6 +37,11 @@ module.exports.getMany = async () => {
 
 module.exports.getNextOne = async data => {
 	const { currId, currOption, answeredIds } = data;
+
+	if (!currId) {
+		return await Question.findOne({ difficulty: 'easy' }).select('-correctOption');
+	}
+
 	const currQuestion = await Question.findById(currId);
 
 	const difficulties = ['easy', 'medium', 'hard'];
@@ -54,10 +59,12 @@ module.exports.getNextOne = async data => {
 			$facet: {
 				matchedQuestions: [
 					{ $match: { _id: { $nin: answeredIds.map(id => new ObjectId(id)) }, difficulty: nextDifficulty } },
+					{ $project: { correctOption: 0 } },
 					{ $sample: { size: 1 } },
 				],
 				nextAvailables: [
 					{ $match: { _id: { $nin: answeredIds.map(id => new ObjectId(id)) } } },
+					{ $project: { correctOption: 0 } },
 					{ $sample: { size: 1 } },
 				],
 			},
@@ -81,7 +88,8 @@ module.exports.getNextOne = async data => {
 };
 
 module.exports.getTotal = async () => {
-	return await Question.find({}).countDocuments();
+	const count = await Question.find({}).countDocuments();
+	return { count };
 };
 
 module.exports.editOne = async ({ _id, data }) => {

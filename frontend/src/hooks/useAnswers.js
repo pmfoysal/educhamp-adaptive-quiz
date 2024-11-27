@@ -1,9 +1,9 @@
 import api from '../utilities/api';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
-export function useHasAnswer(id) {
+export function useGetAnswer(id) {
 	return useQuery({
-		queryKey: ['hasAnswer', id],
+		queryKey: ['getAnswer', id],
 		queryFn: async () => {
 			const result = await api.get(`/quiz/answer/user/${id}`);
 			return result.data;
