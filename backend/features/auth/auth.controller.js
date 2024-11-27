@@ -18,7 +18,8 @@ module.exports.signin = async (req, res) => {
 
 module.exports.signup = async (req, res) => {
 	try {
-		const user = await userServices.addOne(req.body);
+		const result = await userServices.addOne(req.body);
+		const user = result._doc;
 		const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '3d' });
 		delete user.password;
 		res.status(200).send({ ...user, token });

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import PageLoader from './components/loaders/pageLoader';
 
 const SigninPage = lazy(() => import('./pages/signinPage'));
 const SignupPage = lazy(() => import('./pages/signupPage'));
@@ -9,7 +10,6 @@ const HomeLayout = lazy(() => import('./layouts/homeLayout'));
 const AuthLayout = lazy(() => import('./layouts/authLayout'));
 const NotFoundPage = lazy(() => import('./pages/notFoundPage'));
 const AnalyticsPage = lazy(() => import('./pages/analyticsPage'));
-const PageLoader = lazy(() => import('./components/loaders/pageLoader'));
 
 export default function App() {
 	return (

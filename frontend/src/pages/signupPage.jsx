@@ -24,7 +24,7 @@ export default function SignupPage() {
 			})
 			.then(data => {
 				setUser(data);
-				cookie.set('token', data.token, { expires: '3d' });
+				cookie.set('token', data.token, { expires: 3 });
 				toast.success('Successfuly signedin!', { id: tId });
 			})
 			.catch(error => {
@@ -45,8 +45,6 @@ export default function SignupPage() {
 			});
 	}
 
-	const isLoading = signupApi.isPending || googleAuthApi.isPending;
-
 	return (
 		<Form onSubmit={handleSubmit}>
 			<h1>Create an account!</h1>
@@ -54,11 +52,15 @@ export default function SignupPage() {
 			<Input name='name' holder='Full Name' type='text' />
 			<Input name='email' holder='Email ID' type='email' />
 			<Input name='password' holder='Password' type='password' />
-			<Button color='prime' type='submit' isLoading={isLoading}>
+			<Button color='prime' type='submit' isLoading={signupApi.isPending} isDisabled={googleAuthApi.isPending}>
 				Signup
 			</Button>
 			<Divider />
-			<Button color='second' onClick={handleGoogle} isLoading={isLoading}>
+			<Button
+				color='second'
+				onClick={handleGoogle}
+				isDisabled={signupApi.isPending}
+				isLoading={googleAuthApi.isPending}>
 				<Icon icon='flat-color-icons:google' />
 				Signup with Google
 			</Button>

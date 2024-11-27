@@ -1,15 +1,5 @@
 import styles from './input.module.css';
 
-export default function Input({ name, holder, type, value, setValue }) {
-	return (
-		<input
-			required
-			name={name}
-			type={type}
-			value={value}
-			placeholder={holder}
-			className={styles.input}
-			onChange={e => setValue(e.target.value)}
-		/>
-	);
+export default function Input({ name, holder, type }) {
+	return <input required name={name} type={type} placeholder={holder} className={styles.input} />;
 }

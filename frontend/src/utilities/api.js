@@ -1,7 +1,8 @@
 import axios from 'axios';
 import cookie from 'js-cookie';
+import toast from 'react-hot-toast';
 
-const api = axios.create({ baseURL: `${process.env.SERVER_URL}/api` });
+const api = axios.create({ baseURL: `http://localhost:5000/api` });
 
 api.interceptors.request.use(
 	function (config) {
@@ -18,7 +19,8 @@ api.interceptors.response.use(
 		return response;
 	},
 	function (error) {
-		console.log('response error: ', error);
+		toast.error(error.response.data);
+		if (error.status === 401) cookie.remove('token');
 		return Promise.reject(error);
 	}
 );

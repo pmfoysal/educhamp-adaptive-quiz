@@ -7,7 +7,7 @@ module.exports.authChecker = (req, res, nex) => {
 
 	try {
 		const { _id } = jwt.verify(token, process.env.JWT_SECRET);
-		req.userId = _id;
+		req._id = _id;
 		nex();
 	} catch (error) {
 		res.status(401).send(error.message);

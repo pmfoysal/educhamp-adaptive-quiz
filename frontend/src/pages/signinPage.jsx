@@ -41,19 +41,21 @@ export default function SigninPage() {
 			});
 	}
 
-	const isLoading = signinApi.isPending || googleAuthApi.isPending;
-
 	return (
 		<Form onSubmit={handleSubmit}>
 			<h1>Welcome Back!</h1>
 			<p>Please provide your credentials for Signin</p>
 			<Input name='email' holder='Email ID' type='email' />
 			<Input name='password' holder='Password' type='password' />
-			<Button color='prime' type='submit' isLoading={isLoading}>
+			<Button color='prime' type='submit' isLoading={signinApi.isPending} isDisabled={googleAuthApi.isPending}>
 				Signin
 			</Button>
 			<Divider />
-			<Button color='second' onClick={handleGoogle} isLoading={isLoading}>
+			<Button
+				color='second'
+				onClick={handleGoogle}
+				isDisabled={signinApi.isPending}
+				isLoading={googleAuthApi.isPending}>
 				<Icon icon='flat-color-icons:google' />
 				Signin with Google
 			</Button>

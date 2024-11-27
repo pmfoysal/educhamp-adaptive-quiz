@@ -2,8 +2,8 @@ const User = require('../users/user.model');
 
 module.exports.getInfo = async id => {
 	const user = await User.findById(id);
-	if (user) delete user.password;
-	return user;
+	delete user._doc.password;
+	return user._doc;
 };
 
 module.exports.addGoogle = async data => {
