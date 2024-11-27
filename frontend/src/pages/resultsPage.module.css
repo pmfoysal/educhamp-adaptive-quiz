@@ -3,7 +3,7 @@
 }
 
 .list {
-	@apply w-full h-full overflow-y-auto grid gap-4 pr-4;
+	@apply w-full h-full overflow-y-auto grid gap-10 pr-4;
 }
 
 .title {

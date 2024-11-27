@@ -34,6 +34,22 @@
 	@apply flex items-center gap-2 text-tColor-800 cursor-pointer;
 
 	input {
-		accent-color: theme(colors.prime.500);
+		@apply accent-prime-500;
+	}
+}
+
+.isCorrect {
+	@apply text-emerald-500;
+
+	input {
+		@apply accent-emerald-500;
+	}
+}
+
+.isWrong {
+	@apply text-red-500;
+
+	input {
+		@apply accent-red-500;
 	}
 }
