@@ -22,9 +22,9 @@ export function useSignup() {
 }
 
 export function useGoogleSignin() {
-	return useQuery({
-		queryKey: ['googleSignin'],
-		queryFn: async () => {
+	return useMutation({
+		mutationKey: ['googleSignin'],
+		mutationFn: async () => {
 			const result = await api.get('/auth/google');
 			return result.data;
 		},
