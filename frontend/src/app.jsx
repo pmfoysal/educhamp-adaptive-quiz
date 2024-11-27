@@ -16,6 +16,7 @@ export default function App() {
 		<Suspense fallback={<PageLoader />}>
 			<Routes>
 				<Route path='/' element={<HomeLayout />}>
+					<Route index element={<QuizzesPage />} />
 					<Route path='quizzes' element={<QuizzesPage />} />
 					<Route path='results' element={<ResultsPage />} />
 					<Route path='analytics' element={<AnalyticsPage />} />

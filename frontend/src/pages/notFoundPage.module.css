@@ -1,0 +1,15 @@
+.page {
+	@apply h-screen w-full flex flex-col items-center justify-center gap-8 bg-second;
+
+	h1 {
+		@apply text-tColor-700 font-semibold text-center text-xl leading-loose flex flex-col gap-2;
+
+		span {
+			@apply text-prime-500 text-4xl font-bold;
+		}
+	}
+
+	button {
+		@apply max-w-40;
+	}
+}
