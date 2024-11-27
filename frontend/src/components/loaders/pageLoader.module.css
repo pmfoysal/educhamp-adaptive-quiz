@@ -1,0 +1,15 @@
+.page {
+	@apply h-screen w-full flex items-center justify-center z-50 bg-second;
+}
+
+.content {
+	@apply flex flex-col items-center justify-center select-none;
+
+	h1 {
+		@apply text-3xl font-bold text-tColor-900 -mt-3;
+
+		span {
+			@apply text-prime-500;
+		}
+	}
+}
