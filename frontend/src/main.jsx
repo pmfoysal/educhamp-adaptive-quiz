@@ -6,17 +6,22 @@ import AuthContext from './contexts/authContext';
 import QuizContext from './contexts/quizContext';
 import { BrowserRouter } from 'react-router-dom';
 import ToastContainer from './components/misc/toastContainer';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({});
 
 createRoot(document.getElementById('pmfoysal')).render(
 	<StrictMode>
 		<BrowserRouter>
-			<ToastContainer>
-				<AuthContext>
-					<QuizContext>
-						<App />
-					</QuizContext>
-				</AuthContext>
-			</ToastContainer>
+			<QueryClientProvider client={queryClient}>
+				<ToastContainer>
+					<AuthContext>
+						<QuizContext>
+							<App />
+						</QuizContext>
+					</AuthContext>
+				</ToastContainer>
+			</QueryClientProvider>
 		</BrowserRouter>
 	</StrictMode>
 );
