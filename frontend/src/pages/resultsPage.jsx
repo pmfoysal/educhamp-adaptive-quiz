@@ -15,9 +15,9 @@ export default function ResultsPage() {
 
 	if (!answersApi.data?.length) {
 		return (
-			<div>
+			<div className={styles.notFound}>
 				<h1>No Results to show!</h1>
-				<p>You haven&apos;t submitted quiz answers.</p>
+				<p>You haven&apos;t submitted the quizzes answers yet.</p>
 			</div>
 		);
 	}

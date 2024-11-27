@@ -11,7 +11,7 @@ export default function Result({ onStart }) {
 
 	return (
 		<div className={styles.welcome}>
-			<h1>You have already taken the quiz!</h1>
+			<h1>You have already answered the quizzes!</h1>
 			<p>
 				Suggestions and reports are generated based on your submissions. You can take the quiz again if you want.
 			</p>
