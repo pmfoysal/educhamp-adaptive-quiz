@@ -1,28 +1,31 @@
 import styles from './pieChart.module.css';
 import { Chart } from 'react-google-charts';
 
-export default function PieChart() {
-	const data = [
+export default function PieChart({ data }) {
+	const stats = [
 		['Name', 'Value'],
-		['Correct', 9],
-		['Incorrect', 2],
+		['Correct', data.totalScore],
+		['Incorrect', data.totalQuestion - data.totalScore],
 	];
 
 	return (
 		<div className={styles.container}>
 			<Chart
-				data={data}
+				data={stats}
 				width={'100%'}
-				height={'250px'}
+				height={'275px'}
 				chartType='PieChart'
 				options={{
-					title: 'Calculus',
+					title: data.topic,
 					backgroundColor: 'transparent',
 					colors: ['#3b82f6', '#ef4444'],
 					titleTextStyle: { color: '#1e293b', fontSize: 18 },
 					legend: { position: 'bottom', alignment: 'center', textStyle: { color: '#1e293b', fontSize: 14 } },
 				}}
 			/>
+			<p>
+				<strong>Suggestions:</strong> {data.suggestions}
+			</p>
 		</div>
 	);
 }

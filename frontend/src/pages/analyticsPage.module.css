@@ -7,17 +7,5 @@
 }
 
 .charts {
-	@apply grid grid-cols-3 gap-4;
-}
-
-.title {
-	@apply text-tColor-900 font-semibold text-2xl pb-4;
-}
-
-.paras {
-	@apply text-tColor-800 leading-normal flex flex-col gap-3 pb-10;
-
-	strong {
-		@apply font-semibold;
-	}
+	@apply grid grid-cols-1 gap-4;
 }

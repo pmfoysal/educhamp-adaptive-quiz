@@ -10,7 +10,7 @@
 	@apply text-tColor-800 mt-1;
 
 	span {
-		@apply font-semibold;
+		@apply font-semibold text-xl;
 	}
 }
 

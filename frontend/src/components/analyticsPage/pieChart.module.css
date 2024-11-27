@@ -1,3 +1,11 @@
 .container {
 	@apply bg-second rounded-2xl;
+
+	p {
+		@apply p-4 text-tColor-800 leading-normal;
+
+		strong {
+			@apply font-semibold;
+		}
+	}
 }

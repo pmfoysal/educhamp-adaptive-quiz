@@ -3,11 +3,11 @@
 }
 
 .title {
-	@apply bg-second text-tColor-900 px-4 py-2 text-lg font-semibold grid grid-cols-[1fr_auto_auto] gap-2;
+	@apply bg-second text-tColor-900 px-4 py-2 text-lg font-semibold grid grid-cols-[1fr_auto_auto] gap-2 items-start;
 }
 
 .tag {
-	@apply text-xs px-2 py-1 rounded-md leading-none h-full flex items-center justify-center;
+	@apply text-xs px-2 py-2 rounded-md leading-none flex items-center justify-center capitalize;
 }
 
 .topic {
