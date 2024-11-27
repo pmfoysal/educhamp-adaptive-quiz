@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import styles from './authUser.module.css';
 import { NavLink } from 'react-router-dom';
 
-export default function AuthUser({ user }) {
+export default function AuthUser({ user, signout }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -33,7 +33,7 @@ export default function AuthUser({ user }) {
 						<Icon icon='fluent:data-usage-28-filled' />
 						Analytics
 					</NavLink>
-					<button className={styles.active}>
+					<button className={styles.active} onClick={signout}>
 						<Icon icon='fluent:door-arrow-right-28-filled' />
 						Signout
 					</button>

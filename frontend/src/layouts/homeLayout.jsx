@@ -5,7 +5,7 @@ import { useAuthContext } from '../contexts/authContext';
 import { Navigate, NavLink, Outlet } from 'react-router-dom';
 
 export default function HomeLayout() {
-	const { user } = useAuthContext();
+	const { user, signout } = useAuthContext();
 
 	if (!user) return <Navigate to='/signin' />;
 
@@ -17,7 +17,7 @@ export default function HomeLayout() {
 						Adapt<span>Quizz</span>
 					</h1>
 					<div className={styles.user}>
-						<AuthUser user={user} />
+						<AuthUser user={user} signout={signout} />
 					</div>
 				</header>
 				<div className={styles.body}>

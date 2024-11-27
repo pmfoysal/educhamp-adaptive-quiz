@@ -25,10 +25,10 @@ export default function SignupPage() {
 			.then(data => {
 				setUser(data);
 				cookie.set('token', data.token, { expires: 3 });
-				toast.success('Successfuly signedin!', { id: tId });
+				toast.success('Successfuly signed up!', { id: tId });
 			})
-			.catch(error => {
-				toast.error(error.message, { id: tId });
+			.catch(() => {
+				toast.remove(tId);
 			});
 	}
 
@@ -38,10 +38,10 @@ export default function SignupPage() {
 			.mutateAsync()
 			.then(data => {
 				console.log({ data });
-				toast.success('Successfuly signedup!', { id: tId });
+				toast.success('Successfuly signed up!', { id: tId });
 			})
-			.catch(error => {
-				toast.error(error.message, { id: tId });
+			.catch(() => {
+				toast.remove(tId);
 			});
 	}
 

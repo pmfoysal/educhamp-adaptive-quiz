@@ -19,8 +19,8 @@ api.interceptors.response.use(
 		return response;
 	},
 	function (error) {
-		toast.error(error.response.data);
 		if (error.status === 401) cookie.remove('token');
+		else toast.error(error.response.data);
 		return Promise.reject(error);
 	}
 );

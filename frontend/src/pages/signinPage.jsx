@@ -20,11 +20,11 @@ export default function SigninPage() {
 			.mutateAsync({ email: event.target.email.value, password: event.target.password.value })
 			.then(data => {
 				setUser(data);
-				cookie.set('token', data.token, { expires: '3d' });
-				toast.success('Successfuly signedin!', { id: tId });
+				cookie.set('token', data.token, { expires: 3 });
+				toast.success('Successfuly signed in!', { id: tId });
 			})
-			.catch(error => {
-				toast.error(error.message, { id: tId });
+			.catch(() => {
+				toast.remove(tId);
 			});
 	}
 
@@ -34,10 +34,10 @@ export default function SigninPage() {
 			.mutateAsync()
 			.then(data => {
 				console.log({ data });
-				toast.success('Successfuly signedin!', { id: tId });
+				toast.success('Successfuly signed in!', { id: tId });
 			})
-			.catch(error => {
-				toast.error(error.message, { id: tId });
+			.catch(() => {
+				toast.remove(tId);
 			});
 	}
 

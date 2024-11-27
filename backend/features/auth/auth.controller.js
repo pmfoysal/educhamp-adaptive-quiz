@@ -4,10 +4,11 @@ const userServices = require('../users/user.service');
 
 module.exports.signin = async (req, res) => {
 	try {
-		const user = await userServices.getOne({ email: req.body.email });
-		if (!user) throw new Error('No user found');
-		const isValid = user.isValidPass(req.body.password);
+		const result = await userServices.getOne({ email: req.body.email });
+		if (!result) throw new Error('No user found');
+		const isValid = result.isValidPass(req.body.password);
 		if (!isValid) throw new Error("Opps! Password didn't matched");
+		const user = result._doc;
 		const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '3d' });
 		delete user.password;
 		res.status(200).send({ ...user, token });
