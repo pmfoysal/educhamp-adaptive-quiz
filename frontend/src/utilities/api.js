@@ -18,6 +18,7 @@ api.interceptors.response.use(
 		return response;
 	},
 	function (error) {
+		console.log('response error: ', error);
 		return Promise.reject(error);
 	}
 );
