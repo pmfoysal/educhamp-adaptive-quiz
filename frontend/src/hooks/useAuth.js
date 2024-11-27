@@ -30,3 +30,13 @@ export function useGoogleSignin() {
 		},
 	});
 }
+
+export function useAuthToken() {
+	return useQuery({
+		queryKey: ['authToken'],
+		queryFn: async () => {
+			const result = await api.get('/auth/info');
+			return result.data;
+		},
+	});
+}
