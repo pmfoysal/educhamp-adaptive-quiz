@@ -7,7 +7,7 @@ api.post('/signin', controllers.signin);
 api.post('/signup', controllers.signup);
 api.get('/info', middlewares.authChecker, controllers.getInfo);
 
-api.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+api.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], prompt: 'select_account' }));
 api.get('/google/callback', passport.authenticate('google', { session: false }), controllers.googleCallback);
 
 module.exports = api;
