@@ -21,7 +21,7 @@ export default function AuthContext({ children }) {
 	}, [authApi.data]);
 
 	return (
-		<Context.Provider value={{ user, setUser, signout }}>
+		<Context.Provider value={{ user, setUser, signout, refetch: authApi.refetch }}>
 			{authApi.isPending ? <PageLoader /> : children}
 		</Context.Provider>
 	);

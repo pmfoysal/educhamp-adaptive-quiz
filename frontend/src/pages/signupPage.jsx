@@ -3,15 +3,14 @@ import toast from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 import Form from '../components/base/form';
 import Input from '../components/base/input';
+import { useSignup } from '../hooks/useAuth';
 import Button from '../components/base/button';
 import Divider from '../components/base/divider';
 import { useAuthContext } from '../contexts/authContext';
-import { useSignup, useGoogleAuth } from '../hooks/useAuth';
 
 export default function SignupPage() {
 	const signupApi = useSignup();
 	const { setUser } = useAuthContext();
-	const googleAuthApi = useGoogleAuth();
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -33,16 +32,7 @@ export default function SignupPage() {
 	}
 
 	function handleGoogle() {
-		const tId = toast.loading('Signing you up...');
-		googleAuthApi
-			.mutateAsync()
-			.then(data => {
-				console.log({ data });
-				toast.success('Successfuly signed up!', { id: tId });
-			})
-			.catch(() => {
-				toast.remove(tId);
-			});
+		window.open(`${import.meta.env.VITE_BACKEND_URL}/api/auth/google`, '_self');
 	}
 
 	return (
@@ -52,15 +42,11 @@ export default function SignupPage() {
 			<Input name='name' holder='Full Name' type='text' />
 			<Input name='email' holder='Email ID' type='email' />
 			<Input name='password' holder='Password' type='password' />
-			<Button color='prime' type='submit' isLoading={signupApi.isPending} isDisabled={googleAuthApi.isPending}>
+			<Button color='prime' type='submit' isLoading={signupApi.isPending}>
 				Signup
 			</Button>
 			<Divider />
-			<Button
-				color='second'
-				onClick={handleGoogle}
-				isDisabled={signupApi.isPending}
-				isLoading={googleAuthApi.isPending}>
+			<Button color='second' onClick={handleGoogle} isDisabled={signupApi.isPending}>
 				<Icon icon='flat-color-icons:google' />
 				Signup with Google
 			</Button>

@@ -42,8 +42,7 @@ module.exports.googleCallback = async (req, res) => {
 	try {
 		const user = req.user._doc;
 		const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '3d' });
-		delete user.password;
-		res.status(200).send({ ...user, token });
+		res.redirect(`${process.env.FRONTEND_URL}/signin?token=${token}`);
 	} catch (error) {
 		res.status(400).send(error.message);
 	}

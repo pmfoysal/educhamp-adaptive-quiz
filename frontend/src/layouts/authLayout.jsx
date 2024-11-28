@@ -1,9 +1,20 @@
+import cookie from 'js-cookie';
+import { useEffect } from 'react';
 import styles from './authLayout.module.css';
 import { useAuthContext } from '@/contexts/authContext';
-import { Navigate, NavLink, Outlet } from 'react-router-dom';
+import { Navigate, NavLink, Outlet, useSearchParams } from 'react-router-dom';
 
 export default function AuthLayout() {
-	const { user } = useAuthContext();
+	const [params] = useSearchParams();
+	const token = params.get('token');
+	const { user, refetch } = useAuthContext();
+
+	useEffect(() => {
+		if (token) {
+			cookie.set('token', token);
+			refetch();
+		}
+	}, [token]);
 
 	if (user) return <Navigate to='/quizzes' />;
 
