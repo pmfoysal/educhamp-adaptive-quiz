@@ -11,9 +11,6 @@ export default {
 				second: colors.white,
 				tColor: colors.slate,
 			},
-			screens: {
-				sm: '450px',
-			},
 		},
 	},
 	plugins: [],
