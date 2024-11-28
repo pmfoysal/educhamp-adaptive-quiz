@@ -20,7 +20,7 @@ module.exports.getOne = async (req, res) => {
 
 module.exports.getReports = async (req, res) => {
 	try {
-		const result = await services.getReports(req.params.id);
+		const result = await services.getReports(req._id);
 		res.status(200).send(result);
 	} catch (error) {
 		res.status(400).send(error.message);
@@ -29,7 +29,7 @@ module.exports.getReports = async (req, res) => {
 
 module.exports.getOneByUser = async (req, res) => {
 	try {
-		const result = await services.getOneByUser(req.params.id);
+		const result = await services.getOneByUser(req._id);
 		res.status(200).send(result);
 	} catch (error) {
 		res.status(400).send(error.message);

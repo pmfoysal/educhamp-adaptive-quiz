@@ -1,21 +1,21 @@
 import api from '../utilities/api';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
-export function useGetAnswer(id) {
+export function useGetAnswer() {
 	return useQuery({
-		queryKey: ['getAnswer', id],
+		queryKey: ['getAnswer'],
 		queryFn: async () => {
-			const result = await api.get(`/quiz/answer/user/${id}`);
+			const result = await api.get('/quiz/answer/user');
 			return result.data;
 		},
 	});
 }
 
-export function useAnswerReport(id) {
+export function useAnswerReport() {
 	return useQuery({
-		queryKey: ['answerReport', id],
+		queryKey: ['answerReport'],
 		queryFn: async () => {
-			const result = await api.get(`/quiz/answer/reports/${id}`);
+			const result = await api.get('/quiz/answer/reports');
 			return result.data;
 		},
 	});

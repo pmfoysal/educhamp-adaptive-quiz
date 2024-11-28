@@ -12,12 +12,12 @@ import { useNextQuestion, useTotalQuestion } from '../hooks/useQuestions';
 import { useAnswerReport, useGetAnswer, useSubmitAnswer } from '../hooks/useAnswers';
 
 export default function QuizzesPage() {
+	const answerApi = useGetAnswer();
 	const { user } = useAuthContext();
 	const submitApi = useSubmitAnswer();
 	const totalApi = useTotalQuestion();
 	const reportsApi = useAnswerReport();
 	const nextQuizApi = useNextQuestion();
-	const answerApi = useGetAnswer(user?._id);
 	const { quizList, setQuizList } = useQuizContext();
 
 	const [currQuiz, setCurrQuiz] = useState(0);

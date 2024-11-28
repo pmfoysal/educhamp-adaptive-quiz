@@ -2,14 +2,12 @@ import styles from './resultsPage.module.css';
 import Topic from '../components/resultsPage/topic';
 import { useAnswerReport } from '../hooks/useAnswers';
 import getTotalScore from '../utilities/getTotalScore';
-import { useAuthContext } from '../contexts/authContext';
 import { useTotalQuestion } from '../hooks/useQuestions';
 import PageLoader from '../components/loaders/pageLoader';
 
 export default function ResultsPage() {
-	const { user } = useAuthContext();
 	const totalApi = useTotalQuestion();
-	const answersApi = useAnswerReport(user?._id);
+	const answersApi = useAnswerReport();
 
 	if (answersApi.isPending || totalApi.isPending) return <PageLoader />;
 
