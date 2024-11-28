@@ -12,7 +12,8 @@ export default function Button({ type, color, onClick, isDisabled, isLoading, ch
 				<RotatingLines
 					width='20'
 					height='20'
-					color='white'
+					color='#fff'
+					strokeColor='#fff'
 					visible={true}
 					strokeWidth='5'
 					animationDuration='0.75'

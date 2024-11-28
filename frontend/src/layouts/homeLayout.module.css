@@ -1,16 +1,16 @@
 .page {
-	@apply bg-prime-50 p-3 flex items-center justify-center min-h-screen w-full;
+	@apply bg-second sm:bg-prime-50 sm:p-3 grid sm:flex sm:items-center sm:justify-center min-h-screen w-full;
 }
 
 .main {
-	@apply bg-second rounded-3xl h-[85vh] pm-shadow w-[1280px] overflow-hidden grid grid-rows-[9vh_76vh];
+	@apply bg-second sm:rounded-3xl h-full sm:h-[85vh] sm:pm-shadow sm:w-[1280px] sm:overflow-hidden grid grid-rows-[auto_1fr] sm:grid-rows-[9vh_76vh];
 }
 
 .header {
-	@apply grid grid-cols-[250px_1fr];
+	@apply flex justify-between items-center sm:grid grid-cols-[250px_1fr] p-3 sm:p-0;
 
 	h1 {
-		@apply text-tColor-900 text-3xl font-bold w-full text-center h-full flex items-center justify-center;
+		@apply text-tColor-900 text-2xl sm:text-3xl font-bold w-full sm:text-center h-full sm:flex sm:items-center sm:justify-center leading-none sm:leading-tight;
 
 		span {
 			@apply text-prime-500;
@@ -19,15 +19,15 @@
 }
 
 .user {
-	@apply w-full h-full flex items-center justify-end px-4;
+	@apply w-full h-full flex items-center justify-end sm:px-4;
 }
 
 .body {
-	@apply grid grid-cols-[250px_1fr];
+	@apply pt-1 sm:pt-0 sm:grid sm:grid-cols-[250px_1fr];
 }
 
 .sidebar {
-	@apply p-4 pt-0 w-full h-full;
+	@apply hidden sm:block p-4 pt-0 w-full h-full;
 
 	nav {
 		@apply h-full w-full p-4 bg-prime-50 rounded-2xl flex flex-col gap-[4px];
@@ -47,5 +47,5 @@
 }
 
 .content {
-	@apply p-4 grid pt-0 h-full overflow-hidden;
+	@apply p-3 sm:p-4 grid pt-0 h-full overflow-hidden;
 }

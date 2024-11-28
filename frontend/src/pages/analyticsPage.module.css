@@ -1,9 +1,9 @@
 .page {
-	@apply bg-prime-50 rounded-2xl p-4 grid w-full h-full overflow-hidden;
+	@apply bg-prime-50 rounded-2xl p-3 sm:p-4 grid w-full h-full overflow-hidden;
 }
 
 .container {
-	@apply w-full h-full overflow-y-auto pr-4;
+	@apply w-full h-full overflow-y-auto sm:pr-4;
 }
 
 .charts {
@@ -11,13 +11,13 @@
 }
 
 .notFound {
-	@apply bg-prime-50 rounded-2xl p-4 flex flex-col items-center justify-center w-full h-full overflow-hidden gap-4;
+	@apply bg-prime-50 rounded-2xl p-5 sm:p-4 flex flex-col items-center justify-center w-full h-full overflow-hidden gap-4;
 
 	h1 {
 		@apply text-tColor-900 text-2xl text-center font-semibold;
 	}
 
 	p {
-		@apply text-tColor-800 leading-normal;
+		@apply text-tColor-800 leading-normal text-center;
 	}
 }

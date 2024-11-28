@@ -8,17 +8,17 @@ import Welcome from '../components/quizzesPage/welcome';
 import { useAuthContext } from '../contexts/authContext';
 import { useQuizContext } from '../contexts/quizContext';
 import PageLoader from '../components/loaders/pageLoader';
-import { useGetAnswer, useSubmitAnswer } from '../hooks/useAnswers';
 import { useNextQuestion, useTotalQuestion } from '../hooks/useQuestions';
+import { useAnswerReport, useGetAnswer, useSubmitAnswer } from '../hooks/useAnswers';
 
 export default function QuizzesPage() {
 	const { user } = useAuthContext();
 	const submitApi = useSubmitAnswer();
-	const { quizList, setQuizList } = useQuizContext();
-
 	const totalApi = useTotalQuestion();
+	const reportsApi = useAnswerReport();
 	const nextQuizApi = useNextQuestion();
 	const answerApi = useGetAnswer(user?._id);
+	const { quizList, setQuizList } = useQuizContext();
 
 	const [currQuiz, setCurrQuiz] = useState(0);
 	const [totalQuiz, setTotalQuiz] = useState(0);
@@ -75,6 +75,7 @@ export default function QuizzesPage() {
 				toast.success('Successfuly submitted!', { id: tId });
 				setCurrQuiz(0);
 				answerApi.refetch();
+				reportsApi.refetch();
 			})
 			.catch(error => {
 				toast.error(error.message, { id: tId });
@@ -122,7 +123,7 @@ export default function QuizzesPage() {
 										Submit
 									</Button>
 								) : (
-									<Button color='prime' onClick={handleNext} isDisabled={nextQuizApi.isPending}>
+									<Button color='prime' onClick={handleNext} isLoading={nextQuizApi.isPending}>
 										Next
 									</Button>
 								)}

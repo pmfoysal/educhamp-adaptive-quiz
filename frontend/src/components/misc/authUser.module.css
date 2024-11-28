@@ -3,7 +3,7 @@
 }
 
 .title {
-	@apply text-tColor-900 text-xl;
+	@apply hidden sm:block text-tColor-900 text-xl;
 
 	span {
 		@apply font-semibold;
@@ -11,7 +11,7 @@
 }
 
 .user {
-	@apply h-9 w-9 rounded-full overflow-hidden transition-ease hover:opacity-85 active:scale-95 cursor-pointer;
+	@apply h-8 w-8 sm:h-9 sm:w-9 rounded-full overflow-hidden transition-ease hover:opacity-85 active:scale-95 cursor-pointer;
 }
 
 .isOpen {

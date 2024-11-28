@@ -1,5 +1,5 @@
 .page {
-	@apply h-screen w-full flex items-center justify-center z-50 bg-second;
+	@apply fixed top-0 left-0 h-screen w-full flex items-center justify-center z-[99] bg-second;
 }
 
 .content {

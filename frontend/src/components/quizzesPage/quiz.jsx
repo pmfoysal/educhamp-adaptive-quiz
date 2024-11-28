@@ -32,8 +32,10 @@ export default function Quiz({ data, hasResult, count, setQuizList }) {
 		<div className={styles.quiz}>
 			<h1 className={styles.title}>
 				{String(count).padStart(2, '0')}. {data.title}
-				<span className={`${styles.tag} ${styles.topic}`}>{data.topic}</span>{' '}
-				<span className={`${styles.tag} ${styles[data.difficulty]}`}>{data.difficulty}</span>
+				<div className={styles.tags}>
+					<span className={`${styles.tag} ${styles.topic}`}>{data.topic}</span>{' '}
+					<span className={`${styles.tag} ${styles[data.difficulty]}`}>{data.difficulty}</span>
+				</div>
 			</h1>
 			<fieldset className={styles.options}>
 				{data.options.map((item, index) => (
