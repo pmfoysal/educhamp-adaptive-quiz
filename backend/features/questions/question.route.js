@@ -4,7 +4,7 @@ const middlewares = require('../auth/auth.middleware');
 
 api.route('/question').post(middlewares.authChecker, controllers.addOne);
 api.get('/questions/total', middlewares.authChecker, controllers.getTotal);
-api.post('/questions/next', controllers.getNextOne);
+api.post('/questions/next', middlewares.authChecker, controllers.getNextOne);
 api.route('/questions')
 	.post(middlewares.authChecker, controllers.addMany)
 	.get(middlewares.authChecker, controllers.getMany)
